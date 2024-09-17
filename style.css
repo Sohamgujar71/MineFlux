@@ -1,0 +1,493 @@
+/* Responsive Global Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fbf3e4;
+}
+
+/* Navbar Container */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to right, #fdecea, #ebfbf3);
+    padding: 15px 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Logo Section */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    margin-right: 15px;
+    border: 2px solid #f0f0f0;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.logo-container h1 {
+    font-size: 26px;
+    color: #333;
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #007BFF;
+}
+
+/* From Uiverse.io by BHARGAVPATEL1244 */ 
+#searchButton {
+    outline: none;
+    cursor: pointer;
+    border: none;
+    padding: 0.5rem 1.5rem; /* Adjusted padding for smaller size */
+    margin: 0;
+    font-family: inherit;
+    font-size: 0.9rem; /* Adjusted font size */
+    position: relative;
+    display: inline-block;
+    letter-spacing: 0.05rem;
+    font-weight: 700;
+    border-radius: 500px;
+    overflow: hidden;
+    background: #66ff66;
+    color: ghostwhite;
+}
+
+#searchButton span {
+    position: relative;
+    z-index: 10;
+    transition: color 0.4s;
+}
+
+#searchButton:hover span {
+    color: black;
+}
+
+#searchButton::before,
+#searchButton::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+#searchButton::before {
+    content: "";
+    background: #000;
+    width: 120%;
+    left: -10%;
+    transform: skew(30deg);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+#searchButton:hover::before {
+    transform: translate3d(100%, 0, 0);
+}
+
+/* Search Bar */
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 2px solid lightgray;
+    border-radius: 30px;
+    padding: 8px 15px;
+    background-color: white;
+    transition: box-shadow 0.3s ease;
+    position: relative;
+}
+
+.search-container:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.search-icon {
+    font-size: 20px;
+    color: gray;
+}
+
+.search-container input {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    margin-left: 10px;
+    width: 220px;
+    transition: width 0.4s ease;
+}
+
+.search-container input:focus {
+    width: 280px;
+}
+
+/* Additional CSS for suggestions */
+.autocomplete-suggestions {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-top: none;
+    z-index: 1001;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.autocomplete-suggestion {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.autocomplete-suggestion:hover {
+    background-color: #f0f0f0;
+}
+
+@media (max-width: 768px) {
+    .nav-links a {
+        margin: 0 10px;
+        font-size: 16px;
+    }
+
+    .search-container input {
+        width: 180px;
+    }
+
+    .search-container input:focus {
+        width: 220px;
+    }
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: rgb(0, 0, 0);
+    z-index: 2;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 2px;
+    text-shadow: 2px 4px 6px rgb(255, 255, 255);
+}
+
+.hero-text p {
+    font-size: 24px;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    text-shadow: 1px 3px 5px rgb(255, 255, 255);
+}
+
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 36px;
+    }
+
+    .hero-text p {
+        font-size: 18px;
+    }
+}
+
+/* Map Styles */
+.map-container {
+    padding: 20px;
+    background-color: #f3f9fb;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    width: calc(100% - 40px);
+    max-width: 1200px;
+    height: 450px;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+/* Features Section */
+.features-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #fbf3e4;
+}
+
+.features-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.feature-card1 {
+    background: linear-gradient(135deg, #fab143, #FB8C00);
+    color: white;
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card1:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card1 h3 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.feature-card1 p {
+    font-size: 1em;
+    line-height: 1.5;
+}
+.feature-card2 {
+    background: linear-gradient(135deg, #fab143, #FB8C00);
+    color: white;
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card2:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card2 h3 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.feature-card2 p {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.feature-card {
+    background: linear-gradient(135deg, #fab143, #FB8C00);
+    color: white;
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#page3{
+    height: 100%;
+}
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.feature-card p {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+/* Responsive Button Styles for Feature Cards */
+.feature-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 15px;
+}
+
+.feature-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Dashboard */
+.dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+    border-radius: 10px;
+    background-color: #f3f9fb;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.left-panel, .right-panel {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .dashboard {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-panel, .right-panel {
+        width: 100%;
+        max-width: 600px;
+    }
+}
+
+.aqi-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.status {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.aqi {
+    font-size: 36px;
+    color: #4caf50;
+    font-weight: bold;
+}
+
+/* Pollutants Section */
+.pollutants {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.pollutant {
+    text-align: center;
+    margin: 10px;
+}
+
+.pollutant img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+section{
+    position: relative;
+  width: 100%;
+    height: 90vh;  
+    overflow: hidden;
+}
+section .wave{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(./images/wave.png);
+    background-size: 1000px 100px;
+}
+
+section .wave.wave1{
+    animation: animate 30s linear infinite;
+    z-index: 100;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom: 0;
+} 
+@keyframes animate
+{
+    0%
+    {
+        background-position-x: 0;
+    }
+    100%
+    {
+        background-position-x: 1000;
+    }
+}
+
+@keyframes animate2
+{
+    0%
+    {
+        background-position-x: 0;
+    }
+    100%
+    {
+        background-position-x: -1000;
+    }
+}
+
+#page2{
+    text-align: center;
+    background-color: #fbf3e4;
+}

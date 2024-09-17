@@ -1,0 +1,192 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #FFEBCC;
+    margin: 0;
+    flex-direction: column;
+}
+
+.search-container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#mine-search {
+    padding: 10px;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#suggestions {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: left;
+    position: absolute;
+    z-index: 1000;
+}
+
+#suggestions div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+#suggestions div:hover {
+    background-color: #f0f0f0;
+}
+
+.emission-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+#mine-name {
+    font-size: 24px;
+    margin: 0;
+}
+
+#emission-info {
+    font-size: 16px;
+    color: #666;
+}
+
+#last-update {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 20px;
+}
+
+.status {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-top: 10px;
+}
+
+#status-text {
+    background-color: #4CAF50; /* Green background for "Good" */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#carbon-emissions {
+    font-size: 48px;
+    color: #4CAF50;
+}
+
+#unit {
+    font-size: 18px;
+    color: #666;
+    margin-left: 5px;
+}
+
+.search-container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#mine-search {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#search-button {
+    padding: 10px 20px;
+    background-color: #ff7f51;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#suggestions {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 5px;
+    width: 300px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+}
+
+#suggestions li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+#suggestions li:hover {
+    background-color: #f0f0f0;
+}
+
+#mine-visualization {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#progress-container {
+    position: relative;
+    width: 350px;
+    height: 50px;
+    background-color: #e0e0e0;
+    border-radius: 25px;
+    overflow: hidden;
+    margin-right: 30px;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+#progress-bar {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #4CAF50, #FFA500, #FF0000);
+    position: relative;
+    border-radius: 25px;
+}
+
+#progress-fill {
+    width: 0;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.527);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: width 0.4s ease;
+    border-radius: 25px;
+}

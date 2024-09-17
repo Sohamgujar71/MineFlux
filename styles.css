@@ -1,0 +1,96 @@
+body {
+    background: linear-gradient(135deg, #81c784, #aed581);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 2.5rem;
+}
+
+p {
+    color: #555555;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+p.stored-value {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-top: 20px;
+    word-wrap: break-word; /* Ensures long words are broken to fit */
+    overflow-wrap: break-word; /* Breaks long words if necessary */
+}
+
+.form-group input {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+
+button.btn-primary {
+    background-color: #42a5f5;
+    color: #fff;
+}
+
+button.btn-primary:hover {
+    background-color: #1e88e5;
+}
+
+button.btn-success {
+    background-color: #66bb6a;
+    color: #fff;
+}
+
+button.btn-success:hover {
+    background-color: #43a047;
+}
+
+p.stored-value {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-top: 20px;
+}
+
+footer {
+    margin-top: 30px;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #42a5f5;
+    text-decoration: none;
+}
