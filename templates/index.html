@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mine-Flux</title>
+    <link rel="stylesheet" href="../../static/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo-container">
+            <img src="../static/images/mineflux.jpg" alt="mine_flux" class="logo">
+            <h1>Mine-Flux</h1>
+        </div>
+            <!-- Hamburger Menu Icon -->
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+        <div class="nav-links">
+            <a href="#dashboard"><b>Dashboard</b></a>
+            <a href="#features"><b>Services</b></a>
+            <a href="./about-us"><b>About-Us</b></a>
+        </div>
+        <div class="search-container">
+            <span class="search-icon">&#128269;</span>
+            <input type="text" id="coalMineInput" placeholder="Search Coal Mine...">
+            <button id="searchButton"><span>Search</span></button>
+            <div id="suggestions" class="autocomplete-suggestions"></div>
+        </div>
+    </div>
+
+    <div class="hero-section">
+        <img src="../static/images/bg_img.png" alt="Hero Image" class="hero-image">
+        <div class="hero-text">
+            <h1>Empowering Coal Mines for <span class="highlight" style="color: rgb(66, 223, 66);">Greener & Cleaner</span> Future</h1>
+            <p>Leading the Path to Sustainable Mining</p>
+        </div>
+    </div>
+
+    <div class="container" id="page2 map-section">
+        <h1>Coal Mines Map</h1>
+        <div class="map-container">
+            <div id="map"></div>
+        </div>
+    </div>    
+
+    <div class="features-section" id="features">
+        <h2>Key Features</h2>
+        <div class="features-container">
+            <!-- Feature Card 1 -->
+            <div class="feature-card1">
+                <h3>Carbon Credit System</h3>
+                <p>A robust carbon credit system to offset emissions and promote sustainable mining practices. Track and trade carbon credits seamlessly to meet environmental goals and regulatory requirements.</p>
+                <button class="feature-button" onclick="window.location.href='/blockchain'">Unlock Carbon Credit</button>
+            </div>
+            
+    
+            <!-- Feature Card 2 -->
+        <div class="feature-card">
+        <h3>Carbon FootPrint Calculator</h3>
+          <p>Utilize advanced analytics to predict mine outputs and identify potential risks before they impact operations.</p>
+         <button class="feature-button" onclick="window.location.href='/carboncalculator2'">Go to Carbon Calculator</button>
+        </div>
+
+    
+            <!-- Feature Card 3 -->
+            <div class="feature-card2">
+                <h3>Carbon Neutrality Pathways</h3>
+                <p>Monitor and reduce the environmental impact of mining with comprehensive air and water quality assessments.</p>
+                <button class="feature-button" onclick="window.location.href='/pathways'">Go to Carbon Neutrality</button>
+            </div>
+        </div>
+    </div>
+    <div class="dashboard" id="dashboard">
+        <!-- Left Section -->
+        <div class="left-panel">
+            <section>
+            <!-- Include emibox content -->
+            <iframe src="/emibox" width="100%" height="550px" style="border:none;"></iframe>
+        </div>
+
+        <div class="right-panel">
+            <iframe src="/table" width="100%" height="550px" style="border:none;"></iframe>
+        </div>
+            </section>
+    </div>
+    <div class="dashboard" id="page3">
+        <!-- Left Section -->
+        <div class="left-panel">
+            <!-- Include first graph -->
+            <div class='tableauPlaceholder' id='viz1725544163203' style='position: relative'>
+                <noscript>
+                    <a href='#'>
+                        <img alt='Production by Mine Ownership and type of mine within each State&#47;UT ' 
+                             src='https://public.tableau.com/static/images/Bo/Book1_17247519937260/Coalbarchart/1_rss.png' 
+                             style='border: none' />
+                    </a>
+                </noscript>
+                <object class='tableauViz' style='display:none;'>
+                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                    <param name='embed_code_version' value='3' />
+                    <param name='site_root' value='' />
+                    <param name='name' value='Book1_17247519937260&#47;Coalbarchart' />
+                    <param name='tabs' value='no' />
+                    <param name='toolbar' value='yes' />
+                    <param name='static_image' value='https://public.tableau.com/static/images/Bo/Book1_17247519937260/Coalbarchart/1.png' />
+                    <param name='animate_transition' value='yes' />
+                    <param name='display_static_image' value='yes' />
+                    <param name='display_spinner' value='yes' />
+                    <param name='display_overlay' value='yes' />
+                    <param name='display_count' value='yes' />
+                    <param name='language' value='en-US' />
+                    <param name='filter' value='publish=yes' />
+                </object>
+            </div>
+            <script type='text/javascript'>
+                var divElement = document.getElementById('viz1725544163203');
+                var vizElement = divElement.getElementsByTagName('object')[0];
+                vizElement.style.width='100%';
+                vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+                var scriptElement = document.createElement('script');
+                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                vizElement.parentNode.insertBefore(scriptElement, vizElement);
+            </script>
+        </div>
+    
+        <!-- Right Section -->
+        <div class="right-panel">
+            <!-- Include second graph -->
+            <div class='tableauPlaceholder' id='viz1725544387430' style='position: relative'>
+                <noscript>
+                    <a href='#'>
+                        <img alt='Durgapur Land Use&#47; Reclamation ' 
+                             src='https://public.tableau.com/static/images/BO/BOOK2_17255443570670/Sheet1/1_rss.png' 
+                             style='border: none' />
+                    </a>
+                </noscript>
+                <object class='tableauViz' style='display:none;'>
+                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                    <param name='embed_code_version' value='3' />
+                    <param name='site_root' value='' />
+                    <param name='name' value='BOOK2_17255443570670&#47;Sheet1' />
+                    <param name='tabs' value='no' />
+                    <param name='toolbar' value='yes' />
+                    <param name='static_image' value='https://public.tableau.com/static/images/BO/BOOK2_17255443570670/Sheet1/1.png' />
+                    <param name='animate_transition' value='yes' />
+                    <param name='display_static_image' value='yes' />
+                    <param name='display_spinner' value='yes' />
+                    <param name='display_overlay' value='yes' />
+                    <param name='display_count' value='yes' />
+                    <param name='language' value='en-US' />
+                    <param name='filter' value='publish=yes' />
+                </object>
+            </div>
+            <script type='text/javascript'>
+                var divElement = document.getElementById('viz1725544387430');
+                var vizElement = divElement.getElementsByTagName('object')[0];
+                vizElement.style.width='100%';
+                vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+                var scriptElement = document.createElement('script');
+                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                vizElement.parentNode.insertBefore(scriptElement, vizElement);
+            </script>
+        </div>
+    </div>
+    
+        
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="../static/map.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../static/gsap.js"></script>
+</body>
+<script>
+    !function(w, d, s, ...args){
+      var div = d.createElement('div');
+      div.id = 'aichatbot';
+      d.body.appendChild(div);
+      w.chatbotConfig = args;
+      var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s);
+      j.defer = true;
+      j.type = 'module';
+      j.src = 'https://aichatbot.sendbird.com/index.js';
+      f.parentNode.insertBefore(j, f);
+    }(window, document, 'script', '81C30B59-1461-4D0E-AEC4-B71192C61BCF', 'Nlm7cO66FkSJT3jivHwR8', {
+      apiHost: 'https://api-cf-ap-8.sendbird.com',
+    });
+    </script>
+</html>

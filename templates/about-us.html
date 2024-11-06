@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #81c784, #aed581);
+        }
+
+        nav {
+            background: linear-gradient(to right, #fdecea, #ebfbf3);
+            color: #fff;
+            padding: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: #000000;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .about-us {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .container60 {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+        }
+
+        .video-wrapper {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .text-wrapper {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: #34495e;
+            line-height: 1.6;
+        }
+
+        .content {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <!-- Add other nav links as needed -->
+        </ul>
+    </nav>
+    
+    <main>
+        <section class="about-us">
+            <h1>About Us</h1>
+            <div class="container60">
+                <div class="video-wrapper">
+                    <video id="introVideo" controls>
+                        <source src="../static/images/Designing Net Zero Targets.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="text-wrapper">
+                    <div class="content">
+                        <h2>OUR VISION, OUR MISSION!</h2>
+                        <p><b>MINEFLUX</b> is a web-based application designed for Indian coal mines to quantify their carbon footprint and identify strategies for carbon neutrality. It addresses India's challenge of balancing coal dependency with climate change commitments. The application facilitates activity-specific emission calculations, evaluates existing carbon sinks, performs gap analyses, and suggests practical pathways towards carbon neutrality.</p>
+                        <p>MINEFLUX Solution Overview:<br>
+                            • Emission estimation and per capita emission calculation.<br>
+                            • Simulation of emission reduction strategies including clean technologies, afforestation offsets, and renewable energy exploration.<br>
+                            • Carbon credit estimations, robust data visualization, and scalability for various mine types.<br>
+                            • Aims for transparency, decision support, sustainability, and cost efficiency.</p>
+                    </div>
+                    <p style="color: #81c784; font-weight: bold; font-size: 1.2rem;">Our Motto: <span style="font-size: 1.4rem;">SAGE</span></p>
+                    <ul style="list-style-type: none; padding-left: 0;">
+                        <li style="color: #81c784;font-weight: bolder;"><b>S:</b> Sustainability</li>
+                        <li style="color: #81c784;font-weight: bolder;"><b>A:</b> Adaptability</li>
+                        <li style="color: #81c784;font-weight: bolder;"><b>G:</b> Greener-Cleaner</li>
+                        <li style="color: #81c784;font-weight: bolder;"><b>E:</b> Environment</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const video = document.getElementById('introVideo');
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        video.play();
+                    } else {
+                        video.pause();
+                    }
+                });
+            }, options);
+
+            observer.observe(video);
+        });
+    </script>
+</body>
+</html>

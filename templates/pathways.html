@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Neutrality Estimator</title>
+    
+    
+    <style>
+        /* Overall page styling */
+       /* Overall page styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #56ccf2, #2f80ed);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensures content is at least the height of the viewport */
+    overflow-y: auto; /* Allows scrolling */
+}
+
+
+        /* Main container for three columns */
+        .main-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        /* Styling for each column */
+        .column {
+            flex: 1;
+            margin: 0 15px;
+            text-align: center;
+        }
+
+        /* Container styling */
+        .container {
+            padding: 15px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Heading styling */
+        h1 {
+            color: #2f80ed;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        /* Form styling */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* Label styling */
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Input fields, select boxes, and button styling */
+        input, select, button {
+            padding: 10px 12px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        /* Input and select styling */
+        input, select {
+            background-color: #f9f9f9;
+        }
+
+        /* Button styling */
+        button {
+            background: linear-gradient(45deg, #f6d365 0%, #fda085 100%);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        /* Button hover effects */
+        button:hover {
+            background: linear-gradient(45deg, #fbc2eb 0%, #a6c1ee 100%);
+            transform: translateY(-2px);
+        }
+
+        /* Button specific for pathways suggestion */
+        #suggestPathwaysBtn {
+            background: linear-gradient(45deg, #84fab0 0%, #8fd3f4 100%);
+        }
+
+        #suggestPathwaysBtn:hover {
+            background: linear-gradient(45deg, #8fd3f4 0%, #84fab0 100%);
+        }
+
+        /* Result display styling */
+        .result-box {
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        /* Table styling for result display */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #2f80ed;
+            color: white;
+        }
+
+        /* Heading for output boxes */
+        h2 {
+            color: #2f80ed;
+            font-size: 1.4rem;
+        }
+
+        /* Suggested Pathways styling */
+        .pathway-item {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .learn-more {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 12px;
+            background-color: #2f80ed;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .learn-more:hover {
+            background-color: #1a57a5;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Input Form Column -->
+        <div class="column">
+            <div class="container">
+                <h1>Carbon Neutrality Estimator</h1>
+                <form id="carbonForm">
+                    <label for="project">Choose a project to compare:</label>
+                    <select id="project" name="project">
+                        <option value="Sasti">Sasti</option>
+                        <option value="Padmapur">Padmapur</option>
+                    </select>
+                    <label for="miningArea">Enter total active mining area (Sq Km):</label>
+                    <input type="number" id="miningArea" name="miningArea" required>
+                    <label for="plantationArea">Enter total plantation area (Sq Km):</label>
+                    <input type="number" id="plantationArea" name="plantationArea" required>
+                    <label for="emissionFactor">Enter emission factor (Tonnes CO2/Sq Km):</label>
+                    <input type="number" id="emissionFactor" name="emissionFactor" required>
+                    <label for="sequestrationRate">Enter sequestration rate (Tonnes CO2/hectare/year):</label>
+                    <input type="number" id="sequestrationRate" name="sequestrationRate" required>
+                    <button type="submit">Calculate</button>
+                    <button type="button" id="suggestPathwaysBtn">Suggest Neutrality Pathways</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Result Output Column -->
+        <div class="column">
+            <div class="container result-box">
+                <h2>Results</h2>
+                <table id="resultTable">
+                    <thead>
+                       
+                    </thead>
+                    <tbody id="result"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Pathways Output Column -->
+        <div class="column">
+            <div class="container result-box">
+                <h2>Suggested Neutrality Pathways</h2>
+                <div id="pathwaysResult"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('carbonForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            
+            let formData = new FormData(document.getElementById('carbonForm'));
+            fetch('/calculate', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                let resultDiv = document.getElementById('result');
+                resultDiv.innerHTML = `<p>${data.result}</p>`;
+    
+                // Store emissions values to use in the pathways request
+                document.getElementById('carbonForm').setAttribute('data-user-emissions', formData.get('miningArea') * formData.get('emissionFactor'));
+                document.getElementById('carbonForm').setAttribute('data-dataset-emissions', formData.get('miningArea') * formData.get('emissionFactor'));
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    
+        document.getElementById('suggestPathwaysBtn').addEventListener('click', function () {
+            let formData = new FormData(document.getElementById('carbonForm'));
+            formData.append('user_emissions', document.getElementById('carbonForm').getAttribute('data-user-emissions'));
+            formData.append('dataset_emissions', document.getElementById('carbonForm').getAttribute('data-dataset-emissions'));
+    
+            fetch('/suggest_pathways', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Response data:', data);  // Log response data to debug
+    
+                let pathwaysResultDiv = document.getElementById('pathwaysResult');
+                if (Array.isArray(data.pathways)) {
+                    pathwaysResultDiv.innerHTML = data.pathways.map((pathways, index) => `
+                        <div class="pathway-item">
+                            <p>${index + 1}. ${pathways.description}</p>
+                            <div style="margin-bottom: 10px;">
+                                <img src="${pathways.image}" alt="${pathways.description}" style="max-width: 100%; border-radius: 5px;">
+                            </div>
+                            <a href="${pathways.learnMoreLink}" target="_blank" class="learn-more">Learn More</a>
+                        </div>
+                    `).join('');
+                } else {
+                    pathwaysResultDiv.innerHTML = "<p>Unable to load pathways data. Please check the server response format.</p>";
+                    console.error('Unexpected data format for pathways:', data);
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching suggested pathways:', error);
+            });
+        });
+    </script>
+    
+
+
+    
+    
+</body>
+</html>

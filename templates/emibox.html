@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coal Mine Carbon Emissions</title>
+    <link rel="stylesheet" href="/static/emibox.css">
+</head>
+<body>
+
+    <div class="search-container">
+        <input type="text" id="mine-search" placeholder="Search for a mine...">
+        <button id="search-button">Search</button>
+        <ul id="suggestions"></ul>
+    </div>
+
+    <div class="emission-card">
+        <h1 id="mine-name">KHANDRA</h1>
+        <p id="emission-info">Real-time Carbon Emissions</p>
+        <p id="last-update">Last Update: 2024-08-22 10:00:00</p>
+        <div class="status">
+            <span id="status-text">Low</span>
+            <span id="carbon-emissions">18</span>
+            <span id="unit">(kg CO2/tonne)</span>
+        </div>
+    </div>
+    <div id="mine-visualization">
+        <div id="progress-container">
+            <div id="progress-bar">
+                <div id="progress-fill"></div>
+            </div>
+            <div id="pointer-container">
+                <div id="pointer-line"></div>
+                <div id="pointer"></div>
+            </div>
+        </div>
+    <script src="/static/emibox.js"></script>
+</body>
+</html>

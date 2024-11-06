@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Emissions Predictor</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Coal Mine Emissions Prediction</h1>
+        <form id="emission-form">
+            <div class="input-group">
+                <label for="mine_name">Mine Name</label>
+                <input type="text" id="mine_name" name="mine_name" required>
+            </div>
+            <div class="input-group">
+                <label for="coal_type">Coal Type</label>
+                <input type="text" id="coal_type" name="coal_type" required>
+            </div>
+            <div class="input-group">
+                <label for="mine_type">Type of Mine (OC/UG/Mixed)</label>
+                <input type="text" id="mine_type" name="mine_type" required>
+            </div>
+            <div class="input-group">
+                <label for="coal_production">Coal/Lignite Production (MT)</label>
+                <input type="number" id="coal_production" name="coal_production" required>
+            </div>
+            <button type="submit" class="submit-btn">Predict</button>
+        </form>
+        <div id="results">
+            <h2>Prediction Results</h2>
+            <p id="co2-result"></p>
+            <p id="ch4-result"></p>
+            <p id="carbon-result"></p>
+            <p id="footprint-result"></p>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>

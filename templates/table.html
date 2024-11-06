@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top CO2 Emitting Mines</title>
+    <link rel="stylesheet" href="/static/table.css">
+</head>
+<body>
+    <div class="card">
+        <h2>Most Polluted Mines in India</h2>
+        <p class="subheading">Real Time worst mine rankings</p>
+        <div class="dropdowns">
+            <select id="time-range" onchange="updateData()">
+                <option value="last-day">Last Day</option>
+                <option value="last-week">Last Week</option>
+                <option value="last-month">Last Month</option>
+            </select>
+            <select id="emission-type" onchange="updateData()">
+                <option value="CO2">CO2</option>
+                <option value="CH4">CH4</option>
+            </select>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>RANK</th>
+                    <th>MINE</th>
+                    <th>EMISSION</th>
+                </tr>
+            </thead>
+            <tbody id="mine-list">
+                <!-- Data will be populated by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    <script src="../static/table.js"></script>
+</body>
+</html>

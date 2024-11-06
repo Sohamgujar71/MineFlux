@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Credit Dapp</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Carbon Credit Dapp</h1>
+        <p>Connect your wallet to interact with the blockchain.</p>
+        <button id="connectWallet" class="btn-primary">Connect Wallet</button>
+        
+        <div id="userActions" style="display: none;">
+            <p id="accountInfo" class="stored-value"></p>
+            <button id="viewBalance" class="btn-success">View Balance</button>
+            <p id="balanceInfo" class="stored-value">Your Current Balance: 0 Credits</p>
+            
+            <div class="form-group">
+                <input type="number" id="receiveAmount" placeholder="Enter amount to receive">
+                <button id="receiveCredits" class="btn-primary">Receive Credits</button>
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="recipientAddress" placeholder="Recipient Address">
+                <input type="number" id="transferAmount" placeholder="Amount to transfer">
+                <button id="transferCredits" class="btn-success">Transfer Credits</button>
+            </div>
+        </div>
+        
+        <footer>
+            <div class="powered-by">
+                Powered by <a href="https://www.ethereum.org" target="_blank" rel="noopener noreferrer">Ethereum</a>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.5.2/web3.min.js"></script>
+    <script src="../static/script.js"></script>
+</body>
+</html>
